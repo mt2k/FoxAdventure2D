@@ -26,6 +26,16 @@ public class LevelManager : MonoBehaviour
 
     public void RespwanPlayer()
     { 
-        
+        StartCoroutine(RespawnPlayerCourotine());
+    }
+
+    private IEnumerator RespawnPlayerCourotine()
+    {
+        PlayerController.instance.gameObject.SetActive(false);
+        yield return new WaitForSeconds(waitToRespawn);
+        PlayerController.instance.gameObject.SetActive(true);
+        PlayerController.instance.transform.position = CheckpointController.instance.spawnPoint;
+        PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
+        UIController.instance.UpdateHealthDisplay();
     }
 }

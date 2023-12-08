@@ -20,6 +20,8 @@ public class CheckpointController : MonoBehaviour
     {
         //checkpoints = GetComponentsInChildren<Checkpoint>();
         checkpoints = FindObjectsOfType<Checkpoint>();
+        //Alaways Sets position spawnPoint (0;0;0) == player position (-4.25;-2;0)
+        spawnPoint = PlayerController.instance.transform.position;
     }
 
     // Update is called once per frame
