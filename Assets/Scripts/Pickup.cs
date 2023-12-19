@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupGem : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
-    public bool isGem;
+    public bool isGem, isHealth;
     private bool isCollected;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,14 @@ public class PickupGem : MonoBehaviour
                 LevelManager.instance.gemCount++;
                 isCollected = true;
                 Destroy(gameObject);
+            }
+            if (isHealth)
+            {
+                if (PlayerHealthController.instance.currentHealth != PlayerHealthController.instance.maxHealth)
+                {
+                    PlayerHealthController.instance.HealPlayer();
+                    Destroy(gameObject);
+                }
             }
         }
     }
