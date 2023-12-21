@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     public float moveTime, waitTime;
     private float moveCount, waitCount;
@@ -22,6 +23,7 @@ public class EnemyController : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         leftPoint.parent = null; 
         rightPoint.parent = null;
@@ -57,12 +59,14 @@ public class EnemyController : MonoBehaviour
                 {
                     movingRight = true;
                 }
-            } 
-            
-            if(moveCount <= 0) {
+            }
+            animator.SetBool("isMoving", true);
+
+            if (moveCount <= 0) {
                 waitCount = Random.Range(waitTime * MIN_VALUE_WAIT, waitTime * MAX_VALUE_WAIT);
             }
-        } else if(waitCount > 0) 
+        } 
+        else if(waitCount > 0) 
         {
             waitCount -= Time.deltaTime;
             rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
@@ -70,6 +74,7 @@ public class EnemyController : MonoBehaviour
             {
                 moveCount = Random.Range(moveTime * MIN_VALUE_WAIT, moveTime * MAX_VALUE_WAIT);
             }
+            animator.SetBool("isMoving", false);
         }
     }
 }

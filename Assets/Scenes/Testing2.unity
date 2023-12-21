@@ -4117,7 +4117,7 @@ GameObject:
   m_Layer: 0
   m_Name: Left Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4372,6 +4372,8 @@ MonoBehaviour:
   moveSpeed: 3
   leftPoint: {fileID: 1030603736}
   rightPoint: {fileID: 1955892586}
+  moveTime: 4
+  waitTime: 2
 --- !u!50 &1112414830
 Rigidbody2D:
   serializedVersion: 4
@@ -5742,7 +5744,7 @@ GameObject:
   m_Layer: 0
   m_Name: Right Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
