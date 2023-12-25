@@ -5,7 +5,9 @@ using UnityEngine;
 public class Stompbox : MonoBehaviour
 {
     public GameObject deathEffect;
+    public GameObject collectable;
     private string TAG_NAME = "Enemy";
+    public float chanceToDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,12 @@ public class Stompbox : MonoBehaviour
             collision.transform.parent.gameObject.SetActive(false);
             Instantiate(deathEffect, collision.transform.position, collision.transform.rotation);
             PlayerController.instance.BounceHit();
+
+            float dropSelect = Random.Range(0, 100f);
+            if (dropSelect <= chanceToDrop)
+            {
+                Instantiate(collectable, collision.transform.position, collision.transform.rotation);
+            }
         }
     }
 }
