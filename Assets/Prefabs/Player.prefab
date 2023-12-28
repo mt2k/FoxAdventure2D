@@ -31,6 +31,99 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2951033723530267974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5875938281834504382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4227253762340605384}
+  - component: {fileID: 5912415856901774474}
+  - component: {fileID: 7494597828153141569}
+  m_Layer: 7
+  m_Name: Stompbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4227253762340605384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875938281834504382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2951033723530267974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5912415856901774474
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875938281834504382}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.064527035, y: 0.41855097}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6278019, y: 0.16289806}
+  m_EdgeRadius: 0
+--- !u!114 &7494597828153141569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5875938281834504382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e482a4da550cff64daad7b263052e9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 7036072966634765883, guid: d1c30a00b30bc1f4b94422525afbba3a, type: 3}
+  collectable: {fileID: 2065513727182051647, guid: 9030aaadcdb73a548b3a88c707032aa9, type: 3}
+  chanceToDrop: 25
 --- !u!1 &5979142796834376795
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3236184476545054407}
+  - {fileID: 4227253762340605384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5238932347828729007
@@ -135,7 +229,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.25
   m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 825e469e8a834d140a1be8d51dc3bc18, type: 2}
   m_IncludeLayers:
@@ -180,8 +274,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.32450175}
-  m_Size: {x: 1.18, y: 1.4709964}
+  m_Offset: {x: -0.03426218, y: -0.32450175}
+  m_Size: {x: 1.1114755, y: 1.4709964}
   m_Direction: 0
 --- !u!114 &8592022958244971649
 MonoBehaviour:
@@ -196,12 +290,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7.5
-  rigidbody2D: {fileID: 1419647733717317466}
+  rg2D: {fileID: 0}
   jumpForce: 15
   groundCheckPoint: {fileID: 3236184476545054407}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  knockBackLength: 0.25
+  knockBackForce: 3
+  bounceForce: 15
 --- !u!95 &3228074052122489811
 Animator:
   serializedVersion: 5
@@ -237,3 +334,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 6
+  invincibleLength: 1
+  deathEffect: {fileID: 7036072966634765883, guid: d1c30a00b30bc1f4b94422525afbba3a, type: 3}

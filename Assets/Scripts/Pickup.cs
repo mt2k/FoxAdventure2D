@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
     public bool isGem, isHealth;
     private bool isCollected;
+    public GameObject pickupEffects;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Pickup : MonoBehaviour
             {
                 LevelManager.instance.gemCount++;
                 isCollected = true;
+                Instantiate(pickupEffects, collision.transform.position, collision.transform.rotation);
                 Destroy(gameObject);
             }
             if (isHealth)
@@ -33,6 +35,7 @@ public class Pickup : MonoBehaviour
                 if (PlayerHealthController.instance.currentHealth != PlayerHealthController.instance.maxHealth)
                 {
                     PlayerHealthController.instance.HealPlayer();
+                    Instantiate(pickupEffects, collision.transform.position, collision.transform.rotation);
                     Destroy(gameObject);
                 }
             }

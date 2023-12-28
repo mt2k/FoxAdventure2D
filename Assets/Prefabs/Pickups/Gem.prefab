@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8135527437349515514}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6626778, y: -0.92472595, z: 0.039796513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGem: 1
   isHealth: 0
+  pickupEffects: {fileID: 3556980161408402564, guid: b189a2ee5e9652d4f8266be846e4ed36, type: 3}
 --- !u!58 &5306370834528641106
 CircleCollider2D:
   m_ObjectHideFlags: 0
