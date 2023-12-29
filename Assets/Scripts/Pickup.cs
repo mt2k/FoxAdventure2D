@@ -27,7 +27,7 @@ public class Pickup : MonoBehaviour
             {
                 LevelManager.instance.gemCount++;
                 isCollected = true;
-                Instantiate(pickupEffects, collision.transform.position, collision.transform.rotation);
+                Instantiate(pickupEffects, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
             if (isHealth)
@@ -35,7 +35,8 @@ public class Pickup : MonoBehaviour
                 if (PlayerHealthController.instance.currentHealth != PlayerHealthController.instance.maxHealth)
                 {
                     PlayerHealthController.instance.HealPlayer();
-                    Instantiate(pickupEffects, collision.transform.position, collision.transform.rotation);
+                    //Instantiate(pickupEffects, collision.transform.position, collision.transform.rotation);
+                    Instantiate(pickupEffects, transform.position, transform.rotation);
                     Destroy(gameObject);
                 }
             }
