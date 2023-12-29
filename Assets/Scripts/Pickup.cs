@@ -36,7 +36,7 @@ public class Pickup : MonoBehaviour
                 {
                     PlayerHealthController.instance.HealPlayer();
                     //Instantiate(pickupEffects, collision.transform.position, collision.transform.rotation);
-                    Instantiate(pickupEffects, transform.position, transform.rotation);
+                    Instantiate(pickupEffects, transform.position, transform.rotation); 
                     Destroy(gameObject);
                 }
             }
